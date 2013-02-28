@@ -1,0 +1,5 @@
+#!/bin/bash
+iostat -td 10 2 | tail -4 | grep --after-context 2 Device: | grep -v Device | awk '{r+=$3;w+=$4} END {print r;print w}'
+echo ""
+echo "Main Disk"
+

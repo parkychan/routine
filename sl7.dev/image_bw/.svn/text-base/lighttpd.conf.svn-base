@@ -1,0 +1,120 @@
+### Lighttpd Configuration File
+
+#-- Lighttpd modules
+server.modules = (
+				"mod_access",
+				"mod_accesslog",
+				"mod_alias",
+				"mod_auth",
+				"mod_expire",
+				"mod_evhost",
+				#"mod_fastcgi",
+				"mod_status",
+)
+
+#-- Mimetypes
+mimetype.assign             = (
+  ".pdf"          =>      "application/pdf",
+  ".sig"          =>      "application/pgp-signature",
+  ".spl"          =>      "application/futuresplash",
+  ".class"        =>      "application/octet-stream",
+  ".ps"           =>      "application/postscript",
+  ".torrent"      =>      "application/x-bittorrent",
+  ".dvi"          =>      "application/x-dvi",
+  ".gz"           =>      "application/x-gzip",
+  ".pac"          =>      "application/x-ns-proxy-autoconfig",
+  ".swf"          =>      "application/x-shockwave-flash",
+  ".tar.gz"       =>      "application/x-tgz",
+  ".tgz"          =>      "application/x-tgz",
+  ".tar"          =>      "application/x-tar",
+  ".zip"          =>      "application/zip",
+  ".mp3"          =>      "audio/mpeg",
+  ".m3u"          =>      "audio/x-mpegurl",
+  ".wma"          =>      "audio/x-ms-wma",
+  ".wax"          =>      "audio/x-ms-wax",
+  ".ogg"          =>      "audio/x-wav",
+  ".wav"          =>      "audio/x-wav",
+  ".gif"          =>      "image/gif",
+  ".jpg"          =>      "image/jpeg",
+  ".jpeg"         =>      "image/jpeg",
+  ".png"          =>      "image/png",
+  ".xbm"          =>      "image/x-xbitmap",
+  ".xpm"          =>      "image/x-xpixmap",
+  ".xwd"          =>      "image/x-xwindowdump",
+  ".css"          =>      "text/css",
+  ".html"         =>      "text/html",
+  ".htm"          =>      "text/html",
+  ".js"           =>      "text/javascript",
+  ".asc"          =>      "text/plain",
+  ".c"            =>      "text/plain",
+  ".conf"         =>      "text/plain",
+  ".text"         =>      "text/plain",
+  ".txt"          =>      "text/plain",
+  ".dtd"          =>      "text/xml",
+  ".xml"          =>      "text/xml",
+  ".mpeg"         =>      "video/mpeg",
+  ".mpg"          =>      "video/mpeg",
+  ".mov"          =>      "video/quicktime",
+  ".qt"           =>      "video/quicktime",
+  ".avi"          =>      "video/x-msvideo",
+  ".asf"          =>      "video/x-ms-asf",
+  ".asx"          =>      "video/x-ms-asf",
+  ".wmv"          =>      "video/x-ms-wmv",
+  ".bz2"          =>      "application/x-bzip",
+  ".tbz"          =>      "application/x-bzip-compressed-tar",
+  ".tar.bz2"      =>      "application/x-bzip-compressed-tar"
+ )
+
+
+#-- Default domain
+#
+# Replace USERNAME with your Joyent user name, PORTNUMBER with 
+# your assigned port number (you'll need only one).
+
+server.username             = "virality"
+server.port                 = 80
+server.groupname            = server.username
+server.document-root        = "/home/virality/images/"
+server.pid-file             = "/var/run/lighttpd.pid"
+server.tag                  = "lighttpd"
+server.indexfiles           = ( "index.php", "index.html" )
+server.event-handler        = "poll"
+server.network-backend      = "writev"
+server.max-connections      = 2048
+server.max-fds              = 4096
+url.access-deny             = ( "~", ".inc", ".ht" )
+expire.url                  = ( "/" => "access 10 years" )
+static-file.etags           = "disable"
+
+#disable keep-alive
+#server.max-keep-alive-requests = 0
+server.max-keep-alive-requests = 512
+server.max-keep-alive-idle = 1
+
+#-- Logging
+#accesslog.filename          = base + "/logs/access.log"
+#server.errorlog             = base + "/logs/error.log"
+accesslog.filename = "| /home/virality/image_bw/bin/bwcounter"
+accesslog.format = "%V %U \"%{Referer}i\" %O"
+
+### Virtual Host
+$HTTP["host"] =~ "^isl[0-9]+\.6waves\.com$" {
+	status.status-url = "/server-status"
+	alias.url = (
+					"/mrtg/" => "/var/www/html/mrtg/"
+				)
+	auth.backend = "htpasswd"
+	auth.backend.htpasswd.userfile = "/etc/lighttpd/htpasswd"
+	auth.require = (
+					"/server-" => (
+							"method"  => "basic",
+							"realm"   => "6waves.com",
+							"require" => "user=virality"
+							),
+				   )
+	expire.url = ( "/" => "access 0 seconds" )
+}
+
+$HTTP["host"] =~ "^img\.([0-9a-zA-Z\-_]+)\.6waves\.com$" {
+	evhost.path-pattern = server.document-root + "%3/"
+}

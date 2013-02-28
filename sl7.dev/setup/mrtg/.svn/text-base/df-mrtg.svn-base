@@ -1,0 +1,22 @@
+#!/bin/sh
+
+PATH=/bin:/usr/bin
+
+part=$1
+
+# The external mrtg probe returns up to 4 lines of output:
+#       1. Line: current state of the 'incoming bytes counter'
+#       2. Line: current state of the 'outgoing bytes counter'
+#       3. Line: string, telling the uptime of the target.
+#       4. Line: telling the name of the target.
+
+# df=`df --block-size=1 $part | tail -1` # mrtg can't cope with bignums
+df=`df -m $part | tail -1`
+
+# we'll list the available blocks as "incoming" as that's the solid green bar
+
+echo $df | awk '{print $4}' # available
+echo $df | awk '{print $3}' # used
+uptime | cut -d, -f 1 | awk '{print $3, $4}'
+echo $df | awk '{print $1}'
+
