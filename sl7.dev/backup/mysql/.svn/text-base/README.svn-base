@@ -1,4 +1,0 @@
-INSTRUCTION
-
-- Run setup_mysql_backup.sh 
-- Enable binary logging on Mysql (for backup purpose): change log-bin, log-slave-updates and expire_logs_days
