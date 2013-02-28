@@ -1,0 +1,44 @@
+echo "instance name ah DLLM ! e.g. vm10 gum ah "
+
+read  nam
+
+wait 10
+
+
+mkdir -p /usr/local/src/images/$nam/mytemplates/libvirt
+
+cp /etc/vmbuilder/libvirt/* /usr/local/src/images/$nam/mytemplates/libvirt/
+
+
+cat >> /usr/local/src/images/$nam/vmbuilder.partition  << EOF
+
+
+root 8000
+swap 4000
+---
+
+EOF
+
+
+cat >>  /usr/local/src/images/$nam/boot.sh <<EOF
+
+# This script will run the first time the virtual machine boots
+# It is ran as root.
+
+# Expire the user account
+passwd -e ec2-user
+
+# Install openssh-server
+apt-get update
+apt-get install -qqy --force-yes openssh-server vim
+
+EOF
+
+
+
+cd /usr/local/src/images/$nam/
+
+mkdir /usr/local/src/images/$nam/ubuntu-kvm
+
+
+virt-clone --connect=qemu:///system -o vm10 --name $nam -f /usr/local/src/images/$nam/ubuntu-kvm/tmpugouRP.qcow2  -f /usr/local/src/images/$nam/ubuntu-kvm/tmpWJ23CA.qcow2
