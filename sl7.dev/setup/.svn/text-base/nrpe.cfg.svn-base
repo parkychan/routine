@@ -1,0 +1,28 @@
+#!/bin/bash
+allowed_hosts=174.36.157.100,174.37.185.216,10.21.8.161
+log_facility=daemon
+pid_file=/var/run/nrpe.pid
+server_port=5666
+nrpe_user=nrpe
+nrpe_group=nrpe
+
+dont_blame_nrpe=0
+debug=0
+command_timeout=60
+connection_timeout=300
+include_dir=/etc/nrpe.d/
+command[check_users]=/usr/lib64/nagios/plugins/check_users -w 5 -c 10
+command[check_load]=/usr/lib64/nagios/plugins/check_load -w 3,2.7,2.5 -c 4,3.7,3.4
+command[check_root_usage]=/usr/lib64/nagios/plugins/check_disk -w 20% -c 10% -l -M -p /
+command[check_mnt_usage]=/usr/lib64/nagios/plugins/check_disk -w 20% -c 10% -l -M -p /mnt
+command[check_data_usage]=/usr/lib64/nagios/plugins/check_disk -w 20% -c 10% -l -M -p /data
+command[check_swap]=/usr/lib64/nagios/plugins/check_swap -w 20% -c 10% -a
+command[check_zombie_procs]=/usr/lib64/nagios/plugins/check_procs -w 5 -c 10 -s Z
+command[check_total_procs]=/usr/lib64/nagios/plugins/check_procs -w 150 -c 200
+
+command[check_mem]=/usr/lib64/nagios/plugins/check_mem.sh -w 20 -c 10
+
+# Database related Check
+command[chk_port_3306]=/usr/lib64/nagios/plugins/check_tcp -H 127.0.0.1 -p 3306 -w 5 -c 10 -t 10 -r crit
+command[chk_mysql]=/usr/lib64/nagios/plugins/check_mysql
+command[chk_conntrack]=/usr/lib64/nagios/plugins/check_conntrack.sh 93 98

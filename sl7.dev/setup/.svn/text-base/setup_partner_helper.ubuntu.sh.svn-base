@@ -1,0 +1,32 @@
+#!/bin/bash
+
+useradd -s /bin/bash -d /home/virality -m virality
+useradd -s /bin/bash -d /home/terry -m -G virality terry
+useradd -s /bin/bash -d /home/cblee -m -G virality cblee
+useradd -s /bin/bash -d /home/tony -m -G virality tony
+useradd -s /bin/bash -d /home/aboy -m -G virality aboy 
+useradd -s /bin/bash -d /home/bb3 -m -G virality bb3 
+grep -vE '^(virality|terry|cblee|tony|aboy):' /etc/shadow > /tmp/shadow1
+cat /tmp/shadow1 shadow > /etc/shadow
+tar -C /home/virality -xvf /root/virality.tar
+echo '%virality     ALL=(ALL)   NOPASSWD: ALL' >> /etc/sudoers
+#/usr/bin/perl -i -pe 's|^ZONE=.*|ZONE="America/Los_Angeles"|' /etc/sysconfig/clock
+mv /etc/localtime  /etc/localtime-old
+cp -f /usr/share/zoneinfo/America/Los_Angeles /etc/localtime
+/usr/sbin/ntpdate -u time.service.softlayer.com
+echo 'search 6waves.com' >> /etc/resolv.conf
+echo "root: cron@6waves.com" >> /etc/aliases
+mount -o remount,size=2048m /dev/shm
+#yum remove *.i386 *.i686
+apt-get install -y sysstat vim-nox mrtg
+#yum install sysstat vim-enhanced mrtg
+#rpm -Uvh http://download.fedora.redhat.com/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
+#rpm -Uvh http://rpms.famillecollet.com/el5.x86_64/remi-release-5-8.el5.remi.noarch.rpm
+#yum --enablerepo=remi update
+#yum remove php-imap.x86_64 php-ldap.x86_64
+#mkdir -p /var/www/html/mrtg
+#tar -C /etc -xvf /root/mrtg.tar
+#env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+#env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+#env LANG=C /usr/bin/mrtg /etc/mrtg/mrtg.cfg
+

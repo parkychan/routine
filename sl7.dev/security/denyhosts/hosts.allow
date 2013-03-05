@@ -1,0 +1,12 @@
+#
+# hosts.allow	This file describes the names of the hosts which are
+#		allowed to use the local INET services, as decided
+#		by the '/usr/sbin/tcpd' server.
+#
+sshd: 174.36.157.100 
+sshd: 10.21.8.181
+sshd: 174.37.185.216 
+sshd: 10.28.120.169 
+sshd: 203.186.223.134
+sshd: 50.18.93.196
+sshd: 58.177.249.38

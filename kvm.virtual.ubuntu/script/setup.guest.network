@@ -1,0 +1,4 @@
+#sudo virsh net-dumpxml default > default.xml
+#sudo virsh net-destroy default
+virsh net-create /usr/local/src/script/guestnetwork1.xml
+virsh net-autostart guestnetwork

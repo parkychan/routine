@@ -1,0 +1,168 @@
+
+USW,running,i-acd4d7e8,db2a.vegas,m2.xlarge,False,,ec2-184-72-12-227.us-west-1.compute.amazonaws.com,ip-10-166-59-213.us-west-1.compute.internal,,,,vegas,,,
+
+USW,stopped,i-c2207d86,db1a.vegas,m2.xlarge,False,,,,,,,vegas,,,
+
+USW,running,i-0ebae84a,w1a.vegas,m1.large,False,,ec2-50-18-9-237.us-west-1.compute.amazonaws.com,ip-10-161-109-68.us-west-1.compute.internal,,,,vegas,,,
+
+USW,running,i-e7ca1da3,db2.vegas,m2.xlarge,True,,ec2-204-236-191-48.us-west-1.compute.amazonaws.com,ip-10-160-199-48.us-west-1.compute.internal,,,,vegas,,,
+
+USW,running,i-e5ca1da1,db1.vegas,m2.xlarge,True,,ec2-204-236-180-235.us-west-1.compute.amazonaws.com,ip-10-160-211-129.us-west-1.compute.internal,,,,vegas,,,
+
+USW,running,i-e5cb1ca1,w2.vegas,m1.large,True,,ec2-184-72-13-226.us-west-1.compute.amazonaws.com,ip-10-166-111-105.us-west-1.compute.internal,,,,vegas,,,
+
+USW,running,i-dbcb1c9f,w1.vegas,m1.large,True,,ec2-204-236-181-248.us-west-1.compute.amazonaws.com,ip-10-160-25-236.us-west-1.compute.internal,,,,vegas,,,
+
+
+
+USW,running,i-f0e175b4,db3.vegas-yb,m2.xlarge,True,,ec2-184-72-8-155.us-west-1.compute.amazonaws.com,ip-10-164-15-241.us-west-1.compute.internal,,,,vegas_db,,,
+
+USW,running,i-a2e074e6,db2.vegas-yb,m2.xlarge,True,,ec2-184-72-30-81.us-west-1.compute.amazonaws.com,ip-10-164-25-93.us-west-1.compute.internal,,,,vegas_db,,,
+
+USW,running,i-8ee074ca,w3.vegas-yb,m1.large,True,,ec2-184-72-20-28.us-west-1.compute.amazonaws.com,ip-10-162-133-34.us-west-1.compute.internal,,,,vegas_apps,,,
+
+USW,running,i-8ce074c8,w2.vegas-yb,m1.large,True,,ec2-184-72-11-174.us-west-1.compute.amazonaws.com,ip-10-162-118-248.us-west-1.compute.internal,,,,vegas_apps,,,
+
+
+
+
+USW,running,i-8fa87fcb,db1.bird-yb,m2.xlarge,True,,ec2-204-236-185-202.us-west-1.compute.amazonaws.com,ip-10-164-13-225.us-west-1.compute.internal,,204.236.185.202,10.164.13.225,birdland_yb,Unknown,119.34,301d 9h 48m
+
+USW,running,i-f3a87fb7,w1.bird-yb,m1.xlarge,True,,ec2-204-236-191-155.us-west-1.compute.amazonaws.com,ip-10-162-67-127.us-west-1.compute.internal,,204.236.191.155,10.162.67.127,birdland_yb,Unknown,156.78,301d 9h 49m
+
+
+
+
+USW,running,i-f037a3b4,m1.bird,m1.large,True,,ec2-184-72-30-125.us-west-1.compute.amazonaws.com,ip-10-163-2-21.us-west-1.compute.internal,,184.72.30.125,10.163.2.21,birdland,Unknown,184.86,194d 2h 4m
+
+USW,running,i-2d2c9569,db5.bird,m2.xlarge,True,,ec2-204-236-143-3.us-west-1.compute.amazonaws.com,ip-10-164-13-178.us-west-1.compute.internal,,204.236.143.3,10.164.13.178,birdland,Unknown,273.78,227d 18h 52m
+
+USW,running,i-bfe758fb,m2.bird,m1.xlarge,True,,ec2-184-72-15-26.us-west-1.compute.amazonaws.com,ip-10-162-135-47.us-west-1.compute.internal,,184.72.15.26,10.162.135.47,birdland,Unknown,362.7,231d 20h 8m
+
+USW,running,i-c5c41381,db4.bird,m2.xlarge,True,,ec2-184-72-8-148.us-west-1.compute.amazonaws.com,ip-10-164-1-49.us-west-1.compute.internal,,184.72.8.148,10.164.1.49,birdland,Unknown,273.78,301d 5h 44m
+
+USW,running,i-3bc4137f,db3.bird,m2.xlarge,True,,ec2-204-236-164-26.us-west-1.compute.amazonaws.com,ip-10-164-7-252.us-west-1.compute.internal,,204.236.164.26,10.164.7.252,birdland,Unknown,273.78,301d 5h 44m
+
+USW,running,i-39c4137d,db2.bird,m2.xlarge,True,,ec2-184-72-4-73.us-west-1.compute.amazonaws.com,ip-10-164-15-238.us-west-1.compute.internal,,184.72.4.73,10.164.15.238,birdland,Unknown,273.78,301d 5h 44m
+
+USW,running,i-1fc4135b,w2.bird,m1.xlarge,True,,ec2-204-236-146-57.us-west-1.compute.amazonaws.com,ip-10-162-118-95.us-west-1.compute.internal,,204.236.146.57,10.162.118.95,birdland,Unknown,362.7,301d 5h 45m
+
+USW,running,i-1dc41359,w1.bird,m1.xlarge,True,,ec2-204-236-173-125.us-west-1.compute.amazonaws.com,ip-10-162-67-207.us-west-1.compute.internal,,204.236.173.125,10.162.67.207,birdland,Unknown,362.7,301d 5h 45m
+
+
+
+
+USW,running,i-847b86c0,a3.beach,m1.large,True,,ec2-184-72-20-208.us-west-1.compute.amazonaws.com,ip-10-161-75-126.us-west-1.compute.internal,,,,sunny_beach,,,
+
+USW,running,i-2ee3156a,w2.beach,m1.large,True,,ec2-204-236-185-194.us-west-1.compute.amazonaws.com,ip-10-160-187-95.us-west-1.compute.internal,,,,6waves,,,
+
+USW,running,i-9ccc3bd8,db2.beach,m2.xlarge,True,,ec2-204-236-180-147.us-west-1.compute.amazonaws.com,ip-10-160-210-162.us-west-1.compute.internal,,,,sunny_beach,,,
+
+USW,running,i-42816e06,a2.beach,m1.large,True,,ec2-184-72-51-234.us-west-1.compute.amazonaws.com,ip-10-161-55-226.us-west-1.compute.internal,,,,sunny_beach,,,
+
+USW,running,i-b3d7cdf6,db1.beach,m2.xlarge,True,,ec2-184-72-50-136.us-west-1.compute.amazonaws.com,ip-10-160-199-173.us-west-1.compute.internal,,,,6waves,,,
+
+USW,running,i-17d6cc52,a1.beach,m1.large,True,,ec2-184-72-50-135.us-west-1.compute.amazonaws.com,ip-10-160-119-144.us-west-1.compute.internal,,,,6waves,,,
+
+USW,running,i-61544e24,w1.beach,m1.large,True,,ec2-184-72-50-134.us-west-1.compute.amazonaws.com,ip-10-160-150-63.us-west-1.compute.internal,,,,6waves,,,
+
+
+
+
+USW,running,i-f25532b6,w2.mystyle,m1.large,True,,ec2-204-236-165-189.us-west-1.compute.amazonaws.com,ip-10-160-246-47.us-west-1.compute.internal,,,,myStyle_Linux,,,
+
+USW,running,i-f763a9b3,db2.mystyle,m1.xlarge,True,,ec2-184-72-45-5.us-west-1.compute.amazonaws.com,ip-10-160-231-176.us-west-1.compute.internal,,,,myStyle,,,
+
+USW,running,i-a5559fe1,g2.mystyle,m1.xlarge,True,,ec2-184-72-45-3.us-west-1.compute.amazonaws.com,ip-10-160-147-239.us-west-1.compute.internal,,,,myStyle,,,
+
+USW,running,i-3948827d,w1.mystyle,m1.large,True,,ec2-184-72-22-156.us-west-1.compute.amazonaws.com,ip-10-161-91-113.us-west-1.compute.internal,,,,myStyle_Linux,,,
+
+USW,running,i-d74a8093,db1.mystyle,m1.xlarge,True,,ec2-184-72-45-2.us-west-1.compute.amazonaws.com,ip-10-160-229-140.us-west-1.compute.internal,,,,myStyle,,,
+
+USW,running,i-9da369d9,g1.mystyle,m1.xlarge,True,,ec2-184-72-44-240.us-west-1.compute.amazonaws.com,ip-10-160-146-207.us-west-1.compute.internal,,,,myStyle,,,
+
+
+
+
+USW,running,i-875edfc3,db3.rome,m2.xlarge,True,,ec2-204-236-183-142.us-west-1.compute.amazonaws.com,ip-10-160-111-126.us-west-1.compute.internal,,,,default,,,
+
+USW,running,i-fb1c99bf,w3.rome,m1.large,True,,ec2-204-236-159-69.us-west-1.compute.amazonaws.com,ip-10-160-57-171.us-west-1.compute.internal,,,,default,,,
+
+USW,running,i-647db820,db2.rome,m2.xlarge,True,,ec2-204-236-148-136.us-west-1.compute.amazonaws.com,ip-10-160-198-191.us-west-1.compute.internal,,,,default,,,
+
+USW,running,i-5a7db81e,db1.rome,m2.xlarge,True,,ec2-204-236-183-56.us-west-1.compute.amazonaws.com,ip-10-160-211-113.us-west-1.compute.internal,,,,default,,,
+
+USW,running,i-74478230,w2.rome,m1.large,True,,ec2-204-236-186-39.us-west-1.compute.amazonaws.com,ip-10-161-114-94.us-west-1.compute.internal,,,,default,,,
+
+USW,running,i-9021e4d4,w1.rome,m1.large,True,,ec2-184-72-15-182.us-west-1.compute.amazonaws.com,ip-10-160-138-3.us-west-1.compute.internal,,,,default,,,
+
+
+
+
+USW,running,i-9fc243db,w2.island-yb,m1.large,True,,ec2-204-236-165-26.us-west-1.compute.amazonaws.com,ip-10-160-145-13.us-west-1.compute.internal,,,,gi_resort_world_yb,,,
+
+USW,running,i-05ee6941,w1.island-yb,m1.large,True,,ec2-184-72-9-177.us-west-1.compute.amazonaws.com,ip-10-160-151-175.us-west-1.compute.internal,,,,gi_resort_world_yb,,,
+
+USW,running,i-4313b707,db2.island-yb,m2.xlarge,True,,ec2-184-72-0-243.us-west-1.compute.amazonaws.com,ip-10-160-211-64.us-west-1.compute.internal,,,,gi_resort_world_yb,,,
+
+USW,running,i-85fc2bc1,db1.island-yb,m2.xlarge,True,,ec2-204-236-179-20.us-west-1.compute.amazonaws.com,ip-10-160-211-130.us-west-1.compute.internal,,,,gi_resort_world_yb,,,
+
+
+
+
+USW,running,i-a4beece0,db1.island-mx,m2.xlarge,False,,ec2-184-72-9-187.us-west-1.compute.amazonaws.com,ip-10-160-211-50.us-west-1.compute.internal,,,,rw_mixi_backend,,,
+
+USW,running,i-3e5ad37a,w1.island-mx,m1.large,False,,ec2-204-236-147-8.us-west-1.compute.amazonaws.com,ip-10-161-107-56.us-west-1.compute.internal,,,,rw_mixi_apps,,,
+
+
+
+
+USW,running,i-f81966bc,gi_big_business_mixi_DB,m2.xlarge,True,,ec2-204-236-191-149.us-west-1.compute.amazonaws.com,ip-10-164-13-167.us-west-1.compute.internal,,204.236.191.149,10.164.13.167,default,Unknown,273.78,133d 1h 29m
+
+USW,running,i-c6196682,gi_big_business_mixi,m1.large,True,,ec2-50-18-19-162.us-west-1.compute.amazonaws.com,ip-10-162-30-63.us-west-1.compute.internal,,50.18.19.162,10.162.30.63,default,Unknown,184.86,133d 1h 31m
+
+
+
+
+USW,running,i-41379d05,db2.galaxy,m2.xlarge,True,,ec2-204-236-142-185.us-west-1.compute.amazonaws.com,ip-10-164-13-140.us-west-1.compute.internal,,,,dovo_galaxy_db,,,
+
+USW,running,i-b3369cf7,w2.galaxy,m1.large,True,,ec2-184-72-24-220.us-west-1.compute.amazonaws.com,ip-10-163-3-127.us-west-1.compute.internal,,,,dovo_galaxy_apps,,,
+
+USW,running,i-d1339995,db1.galaxy,m2.xlarge,True,,ec2-184-72-0-30.us-west-1.compute.amazonaws.com,ip-10-164-25-203.us-west-1.compute.internal,,,,dovo_galaxy_db,,,
+
+USW,running,i-4b258f0f,w1.galaxy,m1.large,True,,ec2-204-236-154-65.us-west-1.compute.amazonaws.com,ip-10-163-1-209.us-west-1.compute.internal,,,,dovo_galaxy_apps,,,
+
+
+
+
+USW,running,i-65c16221,db2.payment-yb,m2.xlarge,False,,ec2-204-236-185-54.us-west-1.compute.amazonaws.com,ip-10-160-210-176.us-west-1.compute.internal,,204.236.185.54,10.160.210.176,6waves_yabage,Unknown,266.76,265d 7h 48m
+
+USW,running,i-c9c3188d,db1.payment-yb,m2.xlarge,True,,ec2-204-236-182-18.us-west-1.compute.amazonaws.com,ip-10-160-197-169.us-west-1.compute.internal,,204.236.182.18,10.160.197.169,6waves_yabage,Unknown,119.34,280d 3h 19m
+
+USW,running,i-85c912c1,w1.payment-yb,m1.large,True,,ec2-204-236-180-205.us-west-1.compute.amazonaws.com,ip-10-161-83-159.us-west-1.compute.internal,,204.236.180.205,10.161.83.159,6waves_yabage,Unknown,81.9,280d 4h 29m
+
+
+
+USW,running,i-804e59c4,6,t1.micro,False,,ec2-50-18-93-196.us-west-1.compute.amazonaws.com,ip-10-160-115-237.us-west-1.compute.internal,,50.18.93.196,10.160.115.237,default,Unknown,1.93,3d 4h 29m
+
+USW,running,i-e8743dac,w1.mixi,m1.large,False,,ec2-184-72-29-72.us-west-1.compute.amazonaws.com,ip-10-170-162-215.us-west-1.compute.internal,,184.72.29.72,10.170.162.215,default,Unknown,177.84,102d 8h 57m
+
+
+
+
+USW,running,i-efff4cab,db1.ihearts,m2.2xlarge,True,,ec2-184-72-11-103.us-west-1.compute.amazonaws.com,ip-10-164-25-61.us-west-1.compute.internal,,184.72.11.103,10.164.25.61,ihearts_db,Unknown,540.54,238d 7h 42m
+
+USW,running,i-cbff4c8f,w1.ihearts,m1.xlarge,True,,ec2-184-72-21-115.us-west-1.compute.amazonaws.com,ip-10-162-135-127.us-west-1.compute.internal,,184.72.21.115,10.162.135.127,ihearts_apps,Unknown,362.7,238d 7h 44m
+
+
+
+
+USW,running,i-d2d94296,db2.gtrader,m2.xlarge,True,,ec2-204-236-191-153.us-west-1.compute.amazonaws.com,ip-10-164-13-187.us-west-1.compute.internal,,,,gtrader_db,,,
+
+USW,running,i-d624bc92,db1.gtrader,m2.xlarge,True,,ec2-204-236-185-252.us-west-1.compute.amazonaws.com,ip-10-164-15-243.us-west-1.compute.internal,,,,gtrader_db,,,
+
+USW,running,i-7022ba34,w2.gtrader,m1.large,True,,ec2-50-18-3-64.us-west-1.compute.amazonaws.com,ip-10-162-126-32.us-west-1.compute.internal,,,,gtrader_apps,,,
+
+USW,running,i-a229b1e6,w1.gtrader,m1.large,True,,ec2-204-236-166-157.us-west-1.compute.amazonaws.com,ip-10-162-157-171.us-west-1.compute.internal,,,,gtrader_apps,,,
+
+

@@ -1,0 +1,303 @@
+###############################################################################
+
+# Multi Router Traffic Grapher -- Configuration File
+
+###############################################################################
+
+
+
+WorkDir: /var/www/html/mrtg
+
+RunAsDaemon:No
+
+Interval:5
+
+Options[_]: nopercent,growright,noinfo,gauge
+
+MaxBytes[_]: 125000000
+
+
+
+
+
+###############################################################################
+
+# 
+
+# HTML formatting stuff
+
+#
+
+###############################################################################
+
+
+
+PageTop[^]:<table cellspacing="0" cellpadding="10" border="0" width="100%" align="center"><tr><td width="185" valign="top" class="small"><table cellspacing="0" cellpadding="5" border="0" width="100%"><tr><td class="tableh">Network</td></tr><tr><td class="tablesh"><a href="index.html">- Traffic (eth0)</a><br><a href="eth1.html">- Traffic (eth1)</a><br><a href="tcp.html">- Open Connections</a></td></tr><tr><td>&nbsp;</td></tr><tr><td class="tableh">System Stats</td></tr><tr><td class="tablesh"><a href="cpu.html">- CPU Usage</a><br><a href="load.html">- Load Averages</a><br><a href="processes.html">- Processes</a><br><a href="memory.html">- Memory Usage</a><br><a href="swap.html">- Swap Usage</a><br><a href="diskio.html">- Disk I/O</a></td></tr><tr><td>&nbsp;</td></tr></table></td><td> 
+
+
+PageFoot[^]: </td></tr></table>
+
+AddHead[^]: <style><!-- body { text-align: center; background-color: #CCCCCC; font-size: 10pt; font-family: arial, verdana; } th, td { font-size: 10pt; font-family: arial, verdana; } h3 { font-size: 12pt; font-family: arial, verdana; font-weight: bold; } .small { font-size: 8pt; font-family: arial, verdana; } .tableh { font-size: 10pt; font-family: arial, verdana; color: white; background-color: black; font-weight: bold; } .tablesh { font-size: 10pt; font-family: arial, verdana; color: black; background-color: #999999; font-weight: normal; } a:visited, a:active, a:link { text-decoration: none; font-weight: normal; font-family: arial, verdana; color: black; } a:hover { font-weight: normal; font-family: arial, verdana; background-color: #999999; color: white; } --></style>
+
+
+
+
+
+###############################################################################
+
+# 
+
+# Stats
+
+#
+
+###############################################################################
+
+
+
+#----------------------------
+
+# Network
+
+#----------------------------
+
+
+
+Options[index]: nopercent,growright,noinfo,bits
+Target[index]: `/etc/mrtg/system network eth0`
+Title[index]: Traffic Analysis for eth0
+PageTop[index]: <h3>Traffic Analysis for eth0</h3>
+
+Options[eth1]: nopercent,growright,noinfo,bits
+Target[eth1]: `/etc/mrtg/system network eth1`
+Title[eth1]: Traffic Analysis for eth1
+PageTop[eth1]: <h3>Traffic Analysis for eth1</h3>
+
+
+#----------------------------
+
+# TCP Connections
+
+#----------------------------
+
+
+
+Target[tcp]: `/etc/mrtg/system tcp`
+
+Title[tcp]: Established TCP Connections
+
+PageTop[tcp]: <h3>Established TCP Connections</h3>
+
+YLegend[tcp]: Connections
+
+ShortLegend[tcp]: &nbsp;&nbsp;&nbsp;
+
+LegendI[tcp]: 
+
+LegendO[tcp]: Established:
+
+
+
+#----------------------------
+
+# Load
+
+#----------------------------
+
+
+
+Target[load]: `/etc/mrtg/system load`
+
+Title[load]: Load Averages
+
+PageTop[load]: <h3>Load Averages</h3>
+
+YLegend[load]: Load Averages
+
+ShortLegend[load]: &nbsp;&nbsp;&nbsp;
+
+LegendI[load]: 5-min Load:
+
+LegendO[load]: 15-min Load:
+
+
+
+#----------------------------
+
+# Swap
+
+#----------------------------
+
+
+
+#Target[swap]: `free -mt | grep Swap | awk '{printf "%d\n%d\n",$3,$4}'`
+Target[swap]: `free -mt | grep Swap | awk '{printf "%d\n%d\n",$3,$3}'`
+
+Title[swap]: Swap Memory Usage
+
+PageTop[swap]: <h3>Swap Memory Usage</h3>
+
+YLegend[swap]: Swap Usage
+
+ShortLegend[swap]: MB
+
+Options[swap]: withzeroes,gauge,growright
+
+LegendI[swap]: 
+
+LegendO[swap]: Used Swap:
+
+
+
+#----------------------------
+
+# Processes
+
+#----------------------------
+
+
+
+Target[processes]: `/etc/mrtg/system processes`
+
+Title[processes]: Processes
+
+PageTop[processes]: <h3>Processes</h3>
+
+YLegend[processes]: Processes
+
+ShortLegend[processes]: &nbsp;&nbsp;&nbsp;
+
+LegendI[processes]: Total:
+
+LegendO[processes]: Running:
+
+
+
+#----------------------------
+
+# Uptime
+
+#----------------------------
+
+
+
+#Target[uptime]: `/etc/mrtg/system uptime`
+
+#Title[uptime]: Uptime and Idle Time
+
+#PageTop[uptime]: <h3>Uptime and Idle Time</h3>
+
+#YLegend[uptime]: Uptime (sec)
+
+#ShortLegend[uptime]: &nbsp;&nbsp;&nbsp;
+
+#LegendI[uptime]: Total Uptime&nbsp;
+
+#LegendO[uptime]: Idle Time&nbsp;
+
+
+
+#----------------------------
+
+# CPU
+
+#----------------------------
+
+
+
+#cpu user nice system idle
+Target[cpu]: `cat /proc/stat | grep "^cpu " | awk '{printf "%d\n%d\n",($2+$3+$4),($2+$3+$4+$5)}'`
+
+Title[cpu]: CPU Usage
+
+PageTop[cpu]: <H1>CPU Usage</H1>
+
+#MaxBytes[cpu]: 100
+
+Options[cpu]: nopercent,growright,noinfo
+
+LegendI[cpu]: User + System:
+
+LegendO[cpu]: Total:
+
+Ylegend[cpu]: Hz
+
+ShortLegend[cpu]: Hz
+
+#----------------------------
+# Memory
+#----------------------------
+
+
+Target[memory]: `free -mt | grep buffers\/cache | awk '{printf "%d\n%d\n",$3,$3+$4}'`
+
+Title[memory]: Memory Usage
+
+PageTop[memory]: <H3>Memory Usage</H3>
+
+Options[memory]: withzeroes,gauge,growright
+
+YLegend[memory]: Memory Usage
+
+ShortLegend[memory]: MB
+
+LegendI[memory]:  Used:
+
+LegendO[memory]:  All:
+
+
+#----------------------------
+# Disk IO
+#----------------------------
+Target[diskio]: `/usr/bin/perl /etc/mrtg/diskio.pl`
+Options[diskio]: nopercent,growright,noinfo
+Title[diskio]: Disk IO
+PageTop[diskio]: <h3>Disk Traffics</h3>
+YLegend[diskio]: KB per Second
+LegendI[diskio]: Read
+LegendO[diskio]: Write
+ShortLegend[diskio]: KB/s
+MaxBytes[diskio]: 102400
+
+
+######################################################################
+#                                                                    #
+# this is the Disk I/O from sar -b -h                                #
+# I scaled mine by 1000 because the numbers were so small            #
+#                                                                    #
+######################################################################
+#Target[diskio]: `/etc/mrtg/diskio`
+#Options[diskio]: gauge,noinfo, growright, transparent, nopercent
+#MaxBytes[diskio]: 100000000
+#YLegend[diskio]: Disk I/O 
+#ShortLegend[diskio]: blocks 
+#Legend1[diskio]: read
+#Legend2[diskio]: write
+#Legend3[diskio]: Maximal 5 Min
+#Legend4[diskio]: Maximal 5 Min
+#LegendI[diskio]: &nbsp;read:
+#LegendO[diskio]: &nbsp;write:
+#Timezone[diskio]: GMT
+#Title[diskio]: Server Disk I/O (blocks r/w)
+#PageFoot[diskio]: Contact us <a href="/contact.asp">here</a> for more info<p>
+#PageTop[diskio]: <H2>Server Disk I/O (blocks in/out)</H2>
+######################################################################
+
+Target[disk]: `/etc/mrtg/df-mrtg /`
+Options[disk]: nopercent,growright,nobanner,nolegend,noinfo,integer,gauge
+Title[disk]: Disk usage
+PageTop[disk]: <h3>Disk usage</h3>
+YLegend[disk]: MB 
+ShortLegend[disk]: &nbsp;MB
+LegendI[disk]: Available:
+LegendO[disk]: Used:
+
+#Target[swapp]: `/etc/mrtg/procstats.pl -s `
+#Options[swapp]: nopercent,growright,nobanner,nolegend,noinfo,integer
+#Title[swapp]: Page Swapping
+#PageTop[swapp]: <h3>Swap Page Swapping</h3>
+#YLegend[swapp]: # pages
+#ShortLegend[swapp]: &nbsp;pages
+#LegendI[swapp]: Swap In&nbsp;
+#LegendO[swapp]: Swap Out&nbsp;
+
