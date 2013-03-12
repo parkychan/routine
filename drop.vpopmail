@@ -1,0 +1,28 @@
+#!/bin/bash
+
+mv /usr/local/src/ip.diff /usr/local/src/ip.diff.old
+
+grep -ri 'vpopmail ' /var/log/mail.log | awk '{print $11}' | sed -e 's/\b.*@//' | sort | uniq | sed -e 's/^.*://' > /usr/local/src/ip.diff
+
+diff --side-by-side --suppress-common-lines /usr/local/src/ip.diff /usr/local/src/ip.diff.old > /usr/local/src/ip.block
+
+
+if [[ `ls -l /usr/local/src/ip.block | awk '{print $5}'` -ne 0  ]] ; then
+
+
+        for i in `awk '{print $1 }' /usr/local/src/ip.block`;do
+                if [ "$i" = ">" ]; then
+
+                        echo "nothing goes wrong"
+                else
+                iptables -I INPUT 3 -s $i -d 0/0 -j DROP
+                fi
+
+        done
+
+
+else
+
+echo "System is safe !"
+
+fi
